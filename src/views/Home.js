@@ -11,6 +11,7 @@ export class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            showCart: false,
             cart: [
                 {
                     "id": 1,
@@ -29,6 +30,15 @@ export class Home extends Component {
                     "quantity": 3,
                     "image": "https://www.partsware.com.au/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/m/t/mtk002a.jpg",
                     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+                {
+                    "id": 3,
+                    "name": "Classic tee",
+                    "price": 75,
+                    "size": "L",
+                    "quantity": 10,
+                    "image": "https://www.partsware.com.au/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/m/t/mtk002a.jpg",
+                    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 }
             ],
             product: [
@@ -44,34 +54,62 @@ export class Home extends Component {
                 },
             ]
         };
-}
+    }
 
-render()
-{
-    //TODO: take cart into own dumb component, to build UI
-    const cart = this.state.cart.map((cart, key) =>
-        <Cart cart={cart} key={cart.id}/>
-    );
+    displayCart() {
+        this.setState({
+            showCart: true
+        })
+    }
 
-    const product = this.state.product.map((item, key) =>
-        <Item item={item} key={item.id}/>);
+    hideCart() {
+        this.setState({
+            showCart: false
+        })
+    }
 
-    // Sum quantity based on length of cart
-    let quantity = 0;
-    this.state.cart.map((cart, key) =>
-        console.log(quantity += cart.quantity)
-    );
 
-    return (
-        <div>
+    render() {
+        //TODO: take cart into own dumb component, to build UI
+        const cart = this.state.cart.map((cart, key) =>
+            <Cart cart={cart} key={cart.id}/>
+        );
+
+        const product = this.state.product.map((item, key) =>
+            <Item item={item} key={item.id}/>);
+
+        // Sum quantity based on length of cart
+        let quantity = 0;
+        this.state.cart.map((cart, key) =>
+            console.log(quantity += cart.quantity)
+        );
+
+
+        return (
             <div>
-                <MRNavbar quantity={quantity}/>
+                <div>
+                    <MRNavbar quantity={quantity}/>
+                </div>
+                {this._renderCartState(cart)}
+                <div>
+                    {product}
+                </div>
             </div>
-            <ul>{cart}</ul>
-            <div>
-                {product}
-            </div>
-        </div>
-    );
-}
+        );
+    }
+
+    _renderCartState(cart) {
+        let content = false;
+        if(this.state.showCart){
+            content = (
+                <ul>{cart}</ul>
+            )
+        } else {
+            content = (
+                ""
+            )
+        }
+
+        return content;
+    }
 }

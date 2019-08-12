@@ -4,12 +4,12 @@ import "../css/navbar.css";
 
 
 export class MRNavbar extends Component {
-  render() {
+    render() {
     return (
       <nav className="navbar navbar-expand-lg">
-          <span className="navbar-text">
+          <div className="navbar-text">
             My Cart ( {this.props.quantity} )
-          </span>
+          </div>
       </nav>
     );
   }
