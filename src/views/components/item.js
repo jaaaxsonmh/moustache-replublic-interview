@@ -3,12 +3,18 @@ import React, {Component} from 'react';
 export class Item extends Component {
     render(){
         return (
-            <div>
-                <img src={this.props.item.image} alt={this.props.item.name}/>
-                <p>{this.props.item.name}</p>
-                <p>${this.props.item.price.toFixed(2)}</p>
-                <p>{this.props.item.summary}</p>
-                <p>{this.props.item.sizes}</p>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-4">
+                        <img src={this.props.item.image} alt={this.props.item.name}/>
+                    </div>
+                    <div className="col-md-4">
+                        <div>{this.props.item.name}</div>
+                        <div className="border-top border-bottom">${this.props.item.price.toFixed(2)}</div>
+                        <div>{this.props.item.summary}</div>
+                        <div>{this.props.item.sizes}</div>
+                    </div>
+                </div>
             </div>
         );
     }
