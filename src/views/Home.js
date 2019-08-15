@@ -5,13 +5,14 @@ import {MRNavbar} from "./components/MRNavbar.js";
 import {Item} from "./components/item.js";
 import {Cart} from "./components/cart.js";
 import "./css/home.css";
+import "./css/navbar.css";
 
 
 export class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showCart: false,
+            cartVisible: false,
             cart: [
                 {
                     "id": 1,
@@ -38,19 +39,19 @@ export class Home extends Component {
         };
     }
 
-    handleCartState() {
-        if(this.state.showCart) {
+    handleCart() {
+        if(this.state.cartVisible) {
             this.setState({
-                showCart: false
+                cartVisible: false
             })
         } else {
             this.setState({
-                showCart: true
+                cartVisible: true
             })
         }
+        console.log("here")
+        console.log(this.state.cartVisible);
     }
-
-
 
     render() {
         //TODO: take cart into own dumb component, to build UI
@@ -70,7 +71,11 @@ export class Home extends Component {
         return (
             <div>
                 <div>
-                    <MRNavbar quantity={quantity}/>
+                    <nav className="nav navbar-color">
+                        <div className="cart-holder">
+                            <button className="cart-button" onClick={() => this.handleCart()}> My Cart ( {quantity} ) </button>
+                        </div>
+                    </nav>
                 </div>
                 {this._renderCartState(cart)}
                 <div>
@@ -82,7 +87,7 @@ export class Home extends Component {
 
     _renderCartState(cart) {
         let content = false;
-        if(this.state.showCart){
+        if(this.state.cartVisible){
             content = (
                 <ul>{cart}</ul>
             )
