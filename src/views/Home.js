@@ -11,7 +11,7 @@ export class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showCart: true,
+            showCart: false,
             cart: [
                 {
                     "id": 1,
@@ -38,17 +38,18 @@ export class Home extends Component {
         };
     }
 
-    displayCart() {
-        this.setState({
-            showCart: true
-        })
+    handleCartState() {
+        if(this.state.showCart) {
+            this.setState({
+                showCart: false
+            })
+        } else {
+            this.setState({
+                showCart: true
+            })
+        }
     }
 
-    hideCart() {
-        this.setState({
-            showCart: false
-        })
-    }
 
 
     render() {
@@ -60,7 +61,6 @@ export class Home extends Component {
         const product = this.state.product.map((item, key) =>
             <Item item={item} key={item.id}/>);
 
-        // Sum quantity based on length of cart
         let quantity = 0;
         this.state.cart.map((cart, key) =>
             console.log(quantity += cart.quantity)
