@@ -78,9 +78,7 @@ export class Home extends Component {
                     </nav>
                 </div>
                 {this._renderCartState(cart)}
-                <div>
                     {product}
-                </div>
             </div>
         );
     }

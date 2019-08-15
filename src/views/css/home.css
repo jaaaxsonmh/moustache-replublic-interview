@@ -13,3 +13,10 @@
 .required-star {
     color: #C90000;
 }
+
+.product-holder {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
