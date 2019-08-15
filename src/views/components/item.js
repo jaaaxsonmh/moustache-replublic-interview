@@ -2,15 +2,24 @@ import React, {Component} from 'react';
 import "../css/product.css";
 
 export class Item extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            size: this.props.item.sizes[1]
+        }
+    }
+
     render() {
         return (
             <div className="product-holder">
                     <img className="product-image" src={this.props.item.image} alt={this.props.item.name}/>
                 <div className="product-details">
-                    <div>{this.props.item.name}</div>
-                    <div>${this.props.item.price.toFixed(2)}</div>
-                    <div>{this.props.item.summary}</div>
-                    <div>{this.props.item.sizes}</div>
+                    <h1 className="product-name">{this.props.item.name}</h1>
+                    <p className="product-price border-top border-bottom">${this.props.item.price.toFixed(2)}</p>
+                    <p className="product-summary">{this.props.item.summary}</p>
+                    <p className="product-size-selection">SIZE<sup className="required-star">* </sup><span className="selected-size">{this.state.size}</span></p>
+                    <p className="product-size-buttons">{this.props.item.sizes[1]}</p>
                 </div>
             </div>
         );
