@@ -12,7 +12,7 @@ export class Cart extends Component {
                 <img src={this.props.cart.image} alt={this.props.cart.name}/>
                 <div>{this.props.cart.name}</div>
                 <div>${this.props.cart.price.toFixed(2)}</div>
-                <div>{this.props.cart.quantity}</div>
+                <div>{this.props.cart.quantity}x {this.props.cart.price.toFixed(2)}</div>
                 <div>${this.subtotal.toFixed(2)}</div>
                 <div>Size: {this.props.cart.size}</div>
             </div>

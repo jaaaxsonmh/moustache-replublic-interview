@@ -1,0 +1,7 @@
+.mr-navbar {
+    display: flex;
+    justify-content: flex-end;
+    height: inherit;
+    width: 1020px;
+    margin: 0 auto;
+}
