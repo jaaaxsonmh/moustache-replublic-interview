@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-import {MRNavbar} from "./components/MRNavbar.js";
 
 import {Item} from "./components/item.js";
 import {Cart} from "./components/cart.js";
@@ -13,6 +12,7 @@ export class Home extends Component {
         super(props);
         this.state = {
             cartVisible: false,
+
             cart: [
                 {
                     "id": 1,
@@ -49,7 +49,7 @@ export class Home extends Component {
                 cartVisible: true
             })
         }
-        console.log("here")
+        console.log("here");
         console.log(this.state.cartVisible);
     }
 
@@ -84,6 +84,8 @@ export class Home extends Component {
             </div>
         );
     }
+
+
 
     _renderCartState(cart) {
         let content = false;

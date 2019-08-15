@@ -1,28 +1,37 @@
 .nav {
-    display: flex;
-    justify-content: flex-end;
-    height: inherit;
-    width: 1020px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  height: inherit;
+  width: 1020px;
+  margin: 0 auto;
 }
 
 .navbar-color {
-    background: #f6f6f7;
+  background: #f6f6f7;
 }
 
 .cart-holder {
-    width: 200px;
-    text-align: right;
-    box-sizing: inherit;
+  width: 200px;
+  text-align: right;
+  box-sizing: inherit;
 }
 
 .cart-button {
-    height: 2rem;
-    padding: 0 10px 0 10px;
-    font-size: 12px;
-    color: #888888;
-    text-align: center;
-    background: none;
-    outline: none;
-    border: none;
+  height: 2rem;
+  padding: 0 10px 0 10px;
+  font-size: 12px;
+  color: #888888;
+  text-align: center;
+  background: none;
+  outline: none;
+  border: none;
 }
+
+.cart-button:focus {
+  border: 1px solid #cccccc;
+  border-bottom: none;
+  background: #ffffff;
+  outline: none;
+}
+
+
