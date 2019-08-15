@@ -4,9 +4,8 @@ import "../css/product.css";
 export class Item extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            size: this.props.item.sizes[1]
+            size: ""
         }
     }
 
@@ -19,10 +18,32 @@ export class Item extends Component {
                     <p className="product-price border-top border-bottom">${this.props.item.price.toFixed(2)}</p>
                     <p className="product-summary">{this.props.item.summary}</p>
                     <p className="product-size-selection">SIZE<sup className="required-star">* </sup><span className="selected-size">{this.state.size}</span></p>
-                    <p className="product-size-buttons">{this.props.item.sizes[1]}</p>
+                    <p className="product-size-buttons">{this.props.item.sizes}</p>
+                    <button onClick={() =>this.selectedSmall()}>{this.props.item.sizes[0]}</button>
+                    <button onClick={() =>this.selectedMed()}>{this.props.item.sizes[1]}</button>
+                    <button onClick={() => this.selectedLarge()}>{this.props.item.sizes[2]}</button>
+
                 </div>
             </div>
         );
     }
+
+    selectedSmall() {
+        this.setState({
+            size: this.props.item.sizes[0]
+        })
+
+    }
+    selectedMed() {
+        this.setState({
+            size: this.props.item.sizes[1]
+        })
+    }
+    selectedLarge() {
+        this.setState({
+            size: this.props.item.sizes[2]
+        })
+    }
+
 }
 
