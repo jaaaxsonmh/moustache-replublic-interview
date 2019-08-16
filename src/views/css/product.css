@@ -45,11 +45,13 @@
     background: none;
     margin-top: 15px;
     outline: none;
+
 }
 
 .add-to-cart-button:hover {
     background: #222222;
     color: #ffffff;
+    transition: 0.2s ease;
 }
 
 .add-to-cart-button:active {
