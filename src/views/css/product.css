@@ -15,8 +15,7 @@
 .product-holder {
     display: flex;
     align-items: stretch;
-    justify-content: center;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .selected-size {

@@ -14,7 +14,7 @@ export class Item extends Component {
             <div className="product-holder">
                     <img className="product-image" src={this.props.item.image} alt={this.props.item.name}/>
                 <div className="product-details">
-                    <h1 className="product-name">{this.props.item.name}</h1>
+                    <h4 className="product-name">{this.props.item.name}</h4>
                     <p className="product-price border-top border-bottom">${this.props.item.price.toFixed(2)}</p>
                     <p className="product-summary">{this.props.item.summary}</p>
                     <p className="size-section">SIZE<sup className="required-star">*</sup><span className="selected-size">{this.state.size}</span></p>

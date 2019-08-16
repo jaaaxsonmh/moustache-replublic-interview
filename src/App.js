@@ -4,7 +4,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 /* Legality section imports */
 
-import "./App.css";
 
 class App extends Component {
   render() {
