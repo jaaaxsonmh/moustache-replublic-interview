@@ -18,3 +18,27 @@
     justify-content: center;
     margin-bottom: 2rem;
 }
+
+.selected-size {
+    color: #222222;
+    margin-left: 4px;
+}
+
+.size-section {
+    font-weight: 600;
+}
+
+.size-button {
+    width: 40px;
+    height: 40px;
+    color: #888888;
+    border: 1px solid #cccccc;
+    font-size: 12px;
+    margin-right: 7px;
+    background: none;
+}
+
+.size-button:focus {
+    outline: none;
+    border: 3px solid #222222;
+}

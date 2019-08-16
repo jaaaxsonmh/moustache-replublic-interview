@@ -17,12 +17,10 @@ export class Item extends Component {
                     <h1 className="product-name">{this.props.item.name}</h1>
                     <p className="product-price border-top border-bottom">${this.props.item.price.toFixed(2)}</p>
                     <p className="product-summary">{this.props.item.summary}</p>
-                    <p className="product-size-selection">SIZE<sup className="required-star">* </sup><span className="selected-size">{this.state.size}</span></p>
-                    <p className="product-size-buttons">{this.props.item.sizes}</p>
-                    <button onClick={() =>this.selectedSmall()}>{this.props.item.sizes[0]}</button>
-                    <button onClick={() =>this.selectedMed()}>{this.props.item.sizes[1]}</button>
-                    <button onClick={() => this.selectedLarge()}>{this.props.item.sizes[2]}</button>
-
+                    <p className="size-section">SIZE<sup className="required-star">*</sup><span className="selected-size">{this.state.size}</span></p>
+                    <button className="size-button" onClick={() =>this.selectedSmall()}>{this.props.item.sizes[0]}</button>
+                    <button className="size-button" onClick={() =>this.selectedMed()}>{this.props.item.sizes[1]}</button>
+                    <button className="size-button" onClick={() => this.selectedLarge()}>{this.props.item.sizes[2]}</button>
                 </div>
             </div>
         );
