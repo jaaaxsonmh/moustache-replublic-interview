@@ -54,7 +54,6 @@ export class Home extends Component {
     }
 
     render() {
-        //TODO: take cart into own dumb component, to build UI
         const cart = this.state.cart.map((cart, key) =>
             <Cart cart={cart} key={cart.id}/>
         );

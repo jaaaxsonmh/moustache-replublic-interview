@@ -2,8 +2,8 @@
   display: flex;
   justify-content: flex-end;
   height: inherit;
-  width: 1020px;
-  margin: 0 auto;
+  width: 1120px;
+  margin: 2rem auto;
 }
 
 .navbar-color {
@@ -12,7 +12,7 @@
 
 .cart-holder {
   width: 200px;
-  text-align: right;
+  text-align: left;
   box-sizing: inherit;
 }
 
