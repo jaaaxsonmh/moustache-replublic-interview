@@ -1,9 +1,10 @@
 .nav {
   display: flex;
   justify-content: flex-end;
-  height: inherit;
   width: 1120px;
   margin: 2rem auto;
+  box-sizing: inherit;
+  max-height: 32px;
 }
 
 .navbar-color {
@@ -11,11 +12,10 @@
 }
 
 .cart-header {
-  width: 350px;
+  width: 300px;
   text-align: right;
   height: max-content;
   overflow: auto;
-  box-sizing: inherit;
 }
 
 .cart-button {

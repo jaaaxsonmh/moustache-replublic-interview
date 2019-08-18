@@ -58,8 +58,6 @@ export class Home extends Component {
                 cartVisible: true
             })
         }
-        console.log("here");
-        console.log(this.state.cartVisible);
     }
 
     render() {
@@ -77,17 +75,14 @@ export class Home extends Component {
 
 
         return (
-            <div>
-                <div>
+            <div className="activity">
                     <nav className="nav navbar-color">
                         <div className="cart-header">
                             <button className="cart-button" onClick={() => this.handleCart()}> My Cart ( {quantity} ) </button>
-                            <div>{this._renderCartState(cart)}</div>
+                            {this._renderCartState(cart)}
                         </div>
                     </nav>
-
-                </div>
-                    {product}
+                    <div>{product}</div>
             </div>
         );
     }
@@ -98,7 +93,7 @@ export class Home extends Component {
         let content = false;
         if(this.state.cartVisible){
             content = (
-                <div className="cart-holder">{cart}</div>
+                <div className= "cart-holder"> {cart}</div>
             )
         } else {
             content = (
