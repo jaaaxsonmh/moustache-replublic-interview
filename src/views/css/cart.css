@@ -1,0 +1,30 @@
+.cart-product {
+    margin-bottom: 1.5rem;
+    background: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cart-image {
+    max-width: 70px;
+}
+
+.summary-holder {
+    display: flex;
+    text-align: left;
+    margin-left: 12px;
+    flex-direction: column;
+}
+
+.cart-name {
+    margin-bottom: 5px;
+    box-sizing: inherit;
+}
+
+.cart-price {
+    font-weight: 700;
+}
+
+.cart-quantity {
+    margin-bottom: 5px;
+}

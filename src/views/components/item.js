@@ -23,41 +23,27 @@ export class Item extends Component {
                             <sup className="required-star">{"*"}</sup>
                             <span className="selected-size">{this.state.size}</span>
                         </p>
+
                         <button className="size-button"
-                                onClick={() => this.selectedSmall()}>{this.props.item.sizes[0]}</button>
+                                onClick={() => this.selectedSize(0)}>{this.props.item.sizes[0]}</button>
                         <button className="size-button"
-                                onClick={() => this.selectedMed()}>{this.props.item.sizes[1]}</button>
+                                onClick={() => this.selectedSize(1)}>{this.props.item.sizes[1]}</button>
                         <button className="size-button"
-                                onClick={() => this.selectedLarge()}>{this.props.item.sizes[2]}</button>
+                                onClick={() => this.selectedSize(2)}>{this.props.item.sizes[2]}</button>
                     </div>
                     <div className="error-holder">
                         <p className="error-text">{this.state.error}</p>
                     </div>
                     <button className="add-to-cart-button"
                             onClick={() => this.addToCart()}>{"add to cart".toUpperCase()}</button>
-
                 </div>
             </div>
         );
     }
 
-    selectedSmall() {
+    selectedSize(i) {
         this.setState({
-            size: this.props.item.sizes[0],
-            error: null
-        })
-    }
-
-    selectedMed() {
-        this.setState({
-            size: this.props.item.sizes[1],
-            error: null
-        })
-    }
-
-    selectedLarge() {
-        this.setState({
-            size: this.props.item.sizes[2],
+            size: this.props.item.sizes[i],
             error: null
         })
     }
@@ -68,19 +54,6 @@ export class Item extends Component {
                 error: "Please select size".toUpperCase()
             })
         }
-        // if(this.props.item.size === this.state.size){
-        //
-        // }
-        // console.log(this.props.item.push(this.props.item.quantity + 1))
-        // // const currentItem = {
-        // //     id: this.props.item.id,
-        // //     name: this.props.item.name,
-        // //     price: this.props.item.price,
-        // //     size: "S",
-        // //     quantity: 4,
-        // //     image: this.props.item.photoURL,
-        // //     summary: this.props.item.summary
-        // // };
     }
 }
 
