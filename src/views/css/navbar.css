@@ -10,9 +10,11 @@
   background: #f6f6f7;
 }
 
-.cart-holder {
-  width: 200px;
-  text-align: left;
+.cart-header {
+  width: 350px;
+  text-align: right;
+  height: max-content;
+  overflow: auto;
   box-sizing: inherit;
 }
 

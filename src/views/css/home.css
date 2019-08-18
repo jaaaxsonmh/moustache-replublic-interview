@@ -16,3 +16,11 @@
     justify-content: center;
     margin-bottom: 2rem;
 }
+
+.cart-holder {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    box-sizing: inherit;
+    overflow-y: auto;
+    padding: 12px;
+}
